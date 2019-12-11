@@ -63,12 +63,15 @@ class _MyAppState extends State<MyApp> {
                   fontWeight: FontWeight.bold),
             ),
       ),
-      home:
-          TabScreenBottomBar(), //TabsScreenTopBar() //CategoriesScreen(), //MyHomePage(),
+      home: TabScreenBottomBar(
+          _favoriteMeals), //TabsScreenTopBar() //CategoriesScreen(), //MyHomePage(),
       routes: {
-        CategoryMealsScreen.routeName: (ctx) =>
-            CategoryMealsScreen(_availableMeals),
-        MealDetailsScreen.routeName: (ctx) => MealDetailsScreen(),
+        CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(
+              _availableMeals,
+              _toggleFavorite,
+            ),
+        MealDetailsScreen.routeName: (ctx) =>
+            MealDetailsScreen(_toggleFavorite, _isMealFavorite),
         FiltersScreen.routeName: (ctx) => FiltersScreen(_filters, _setFilters),
       },
       onUnknownRoute: (settings) {

@@ -10,7 +10,8 @@ class CategoryMealsScreen extends StatefulWidget {
   CategoryMealsScreen(this.categoryId, this.categoryTitle); */
   static const routeName = '/category-meals';
   final List<Meal> _availableMeals;
-  CategoryMealsScreen(this._availableMeals);
+  final Function _toggleFavorite;
+  CategoryMealsScreen(this._availableMeals, this._toggleFavorite);
   @override
   _CategoryMealsScreenState createState() => _CategoryMealsScreenState();
 }

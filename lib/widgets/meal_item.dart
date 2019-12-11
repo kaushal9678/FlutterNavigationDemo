@@ -88,6 +88,26 @@ class MealItem extends StatelessWidget {
                       height: 250, width: double.infinity, fit: BoxFit.cover),
                 ),
                 Positioned(
+                  top: 15,
+                  right: 15,
+                  height: 35,
+                  width: 35,
+                  // bottom: 5,
+                  child: Container(
+                    width: 35,
+                    //color: Colors.black12,
+                    //  padding: EdgeInsets.symmetric(horizontal: 5),
+                    child: FloatingActionButton(
+                      child: Icon(
+                        Icons.favorite_border,
+                        color: Colors.grey,
+                      ),
+                      backgroundColor: Theme.of(context).primaryColor,
+                      //onPressed: () => favoriteItem(id),
+                    ),
+                  ),
+                ),
+                Positioned(
                   bottom: 20,
                   right: 10,
                   child: Container(
