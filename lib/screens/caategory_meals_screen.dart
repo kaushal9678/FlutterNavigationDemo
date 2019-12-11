@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import '../dummy_data.dart';
 import '../widgets/meal_item.dart';
 import '../models/meals.dart';
 
 class CategoryMealsScreen extends StatefulWidget {
   static const routeName = '/category-meals';
   final List<Meal> _availableMeals;
-  final Function _toggleFavorite;
 
-  CategoryMealsScreen(this._availableMeals, this._toggleFavorite);
+  CategoryMealsScreen(this._availableMeals);
+
   @override
   _CategoryMealsScreenState createState() => _CategoryMealsScreenState();
 }
