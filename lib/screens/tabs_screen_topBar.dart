@@ -1,24 +1,32 @@
 import 'package:flutter/material.dart';
 import '../screens/categories_screen.dart';
-import '../models/meals.dart';
+
 import '../screens/favorite_screen.dart';
+import '../models/meals.dart';
 
 class TabsScreenTopBar extends StatefulWidget {
-  //TabsScreenTopBar({Key key}) : super(key: key);
   final List<Meal> favoriteMeals;
+
   TabsScreenTopBar(this.favoriteMeals);
+
   _TabsScreenTopBarState createState() => _TabsScreenTopBarState();
 }
 
 class _TabsScreenTopBarState extends State<TabsScreenTopBar> {
-  List<Map<String, Object>> pages;
+  List<Map<String, Object>> _pages;
   int _selectedPageIndex = 0;
+
   @override
   void initState() {
-    // TODO: implement initState
-    pages = [
-      {'page': CategoriesScreen(), 'title': 'Categories'},
-      {'page': FavoriteScreen(widget.favoriteMeals), 'title': 'Favorites'}
+    _pages = [
+      {
+        'page': CategoriesScreen(),
+        'title': 'Categories',
+      },
+      {
+        'page': FavoriteScreen(widget.favoriteMeals),
+        'title': 'Your Favorite',
+      },
     ];
     super.initState();
   }
@@ -37,7 +45,6 @@ class _TabsScreenTopBarState extends State<TabsScreenTopBar> {
         appBar: AppBar(
           title: Text("Meals"),
           bottom: TabBar(
-            onTap: _selectPage,
             tabs: <Widget>[
               Tab(
                 icon: Icon(Icons.category),
@@ -57,7 +64,7 @@ class _TabsScreenTopBarState extends State<TabsScreenTopBar> {
           ],
         ),
       ),
-      initialIndex: _selectedPageIndex,
+      initialIndex: 0,
     );
   }
 }

@@ -4,14 +4,11 @@ import '../widgets/meal_item.dart';
 import '../models/meals.dart';
 
 class CategoryMealsScreen extends StatefulWidget {
-  // const CategoryMeals({Key key}) : super(key: key);
-/*   final String categoryId;
-  final String categoryTitle;
-  CategoryMealsScreen(this.categoryId, this.categoryTitle); */
   static const routeName = '/category-meals';
   final List<Meal> _availableMeals;
-  final Function toggleFavorites;
-  CategoryMealsScreen(this._availableMeals, this.toggleFavorites);
+  final Function _toggleFavorite;
+
+  CategoryMealsScreen(this._availableMeals, this._toggleFavorite);
   @override
   _CategoryMealsScreenState createState() => _CategoryMealsScreenState();
 }
@@ -66,7 +63,6 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
             duration: displayMeals[index].duration,
             imageURL: displayMeals[index].imageUrl,
             removeItem: _removeMeal,
-            favoriteItem: widget.toggleFavorites,
           );
         },
         itemCount: displayMeals.length,

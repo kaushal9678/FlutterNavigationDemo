@@ -11,7 +11,6 @@ class MealItem extends StatelessWidget {
   final Complexity complexity;
   final Affordability affodability;
   final Function removeItem;
-  final Function favoriteItem;
 
   MealItem(
       {@required this.id,
@@ -20,8 +19,7 @@ class MealItem extends StatelessWidget {
       @required this.affodability,
       @required this.complexity,
       @required this.duration,
-      this.removeItem,
-      this.favoriteItem});
+      this.removeItem});
 
   String get complexityTest {
     switch (complexity) {
@@ -90,25 +88,18 @@ class MealItem extends StatelessWidget {
                       height: 250, width: double.infinity, fit: BoxFit.cover),
                 ),
                 Positioned(
-                  top: 5,
-                  right: 35,
-                  height: 50,
-                  width: 50,
+                  top: 15,
+                  right: 15,
+                  height: 35,
+                  width: 35,
                   // bottom: 5,
                   child: Container(
-                    width: 50,
+                    width: 35,
                     //color: Colors.black12,
                     //  padding: EdgeInsets.symmetric(horizontal: 5),
                     child: IconButton(
-                      icon: Icon(Icons.favorite),
-                      highlightColor: Theme.of(context).accentColor,
-                      focusColor: Theme.of(context).accentColor,
-                      splashColor: Theme.of(context).primaryIconTheme.color,
-                      iconSize: 45,
-                      color: Colors.grey,
-                      onPressed: () {
-                        print("pressed");
-                      },
+                      icon: Icon(Icons.favorite_border),
+                      onPressed: () {},
                     ),
                   ),
                 ),
